@@ -1,10 +1,11 @@
 #simple apps
-sudo apt install htop screenfetch zip bat curl flameshot zsh -y
+sudo apt install htop screenfetch zip bat curl flameshot git zsh -y
 
 #oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-cp configs/.zshrc ~/.zshrc
-
+yes | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+cp -rf configs/.zshrc ~/.zshrc
 
 #vscode
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
@@ -18,6 +19,8 @@ sudo apt-get install code -y
 sudo add-apt-repository ppa:gnome-terminator -y
 sudo apt-get update
 sudo apt-get install terminator -y
+mkdir -p ~/.config/terminator/ 
+cp configs/terminator.config ~/.config/terminator/config
 
 #spotify
 curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add - 
@@ -30,37 +33,13 @@ wget "https://download.jetbrains.com/product?code=IIU&latest&distribution=linux"
 sudo mkdir /usr/share/intellij
 sudo tar -xzf intellij.tar.gz -C /usr/share/intellij
 
-
-
-#gnome desktop
+#nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | zsh
+#to check: is nvm added to .zshrc twice?
 
 #sdkman
+curl -s "https://get.sdkman.io" | zsh
+#to check: is sdk added to .zshrc twice?
 
-#hotkey flameshot
-#hotkey terminal
-#config vscode
-#config intellij 
-#hotkeys window moving
-
-
-    # - name: Install wps-office
-    #   apt:
-    #     name: wps-office
-        
-    # - name: Install zsh
-    #   apt:
-    #     name: zsh
-
-    # - name: Install intellij
-    #   unarchive:
-    #     src: https://download.jetbrains.com/product?code=IIU&latest&distribution=linux
-    #     dest: /usr/share/intellij
-    #     creates: /usr/share/intellij
-    #     remote_src: yes
-
-
-
-
-
-
-
+#wps-office
+sudo snap install wps-office  
