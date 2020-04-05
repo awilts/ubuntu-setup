@@ -15,10 +15,12 @@ configs:
 
 #hotkey flameshot
 #hotkey terminal
-#config vscode
-#config intellij via settings repository
-#stored in private repository: https://github.com/awilts/intellij-settings
 #hotkeys window moving
+
+#config vscode via 'settings sync'
+#stored in private gist: https://github.com/awilts/...
+#config intellij via 'settings repository'
+#stored in private repository: https://github.com/awilts/intellij-settings
 
 
     # - name: Install wps-office

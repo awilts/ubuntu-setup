@@ -43,3 +43,7 @@ curl -s "https://get.sdkman.io" | zsh
 
 #wps-office
 sudo snap install wps-office  
+
+#better ubuntu desktop
+sudo apt install gnome-tweak-tool
+sudo apt remove gnome-shell-extension-ubuntu-dock
