@@ -47,3 +47,19 @@ sudo snap install wps-office
 #better ubuntu desktop
 sudo apt install gnome-tweak-tool
 sudo apt remove gnome-shell-extension-ubuntu-dock
+gsettings set org.gnome.shell.keybindings toggle-overview '[]'
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right '[]'
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left '[]' 
+gsettings set org.gnome.desktop.wm.keybindings org.gnome.desktop.wm.keybindings minimize ['<Super>Down']
+gsettings set org.gnome.desktop.wm.keybindings org.gnome.desktop.wm.keybindings maximize ['[]']
+gsettings set org.gnome.desktop.wm.keybindings org.gnome.desktop.wm.keybindings begin-resize ['[]']
+gsettings set org.gnome.desktop.wm.keybindings org.gnome.desktop.wm.keybindings begin-move ['[]']
+gsettings set org.gnome.desktop.wm.keybindings org.gnome.desktop.wm.keybindings switch-applications ['<Alt>Tab']
+gsettings set org.gnome.desktop.wm.keybindings org.gnome.desktop.wm.keybindings switch-applications-backward ['<Shift><Alt>Tab']
+gsettings set org.gnome.desktop.wm.keybindings org.gnome.desktop.wm.keybindings toggle-maximized ['<Super>Up']
+gsettings set org.gnome.desktop.wm.keybindings org.gnome.desktop.wm.keybindings close ['<Super>w']
+gsettings set org.gnome.desktop.wm.keybindings org.gnome.desktop.wm.keybindings show-desktop ['<Super>d']
+
+#disable standby on lid-close
+gsettings set org.gnome.settings-daemon.plugins.power lid-close-battery-action 'nothing'
+gsettings set org.gnome.settings-daemon.plugins.power lid-close-ac-action 'nothing'
