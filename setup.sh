@@ -35,16 +35,14 @@ sudo tar -xzf intellij.tar.gz -C /usr/share/intellij
 
 #nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | zsh
-#to check: is nvm added to .zshrc twice?
 
 #sdkman
 curl -s "https://get.sdkman.io" | zsh
-#to check: is sdk added to .zshrc twice?
 
 #wps-office
 sudo snap install wps-office  
 
-#better ubuntu desktop
+#better gnome desktop
 sudo apt install gnome-tweak-tool
 sudo apt remove gnome-shell-extension-ubuntu-dock
 gsettings set org.gnome.shell.keybindings toggle-overview '[]'
@@ -59,6 +57,19 @@ gsettings set org.gnome.desktop.wm.keybindings org.gnome.desktop.wm.keybindings 
 gsettings set org.gnome.desktop.wm.keybindings org.gnome.desktop.wm.keybindings toggle-maximized ['<Super>Up']
 gsettings set org.gnome.desktop.wm.keybindings org.gnome.desktop.wm.keybindings close ['<Super>w']
 gsettings set org.gnome.desktop.wm.keybindings org.gnome.desktop.wm.keybindings show-desktop ['<Super>d']
+
+
+#custom shortcuts
+gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/']"
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name 'Terminator'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command 'terminator'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding '<Super>t'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ name 'Flameshot'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ command 'flameshot gui'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ binding '<Super>s'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ name 'Shutdown'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ command 'gnome-session-quit  --power-off'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ binding '<Alt>F4'
 
 #disable standby on lid-close
 gsettings set org.gnome.settings-daemon.plugins.power lid-close-battery-action 'nothing'
