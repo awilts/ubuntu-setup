@@ -42,6 +42,11 @@ curl -s "https://get.sdkman.io" | zsh
 #wps-office
 sudo snap install wps-office  
 
+#mailspring
+sudo apt install gdebi-core
+wget -O ~/mailspring.deb "https://updates.getmailspring.com/download?platform=linuxDeb"
+yes | sudo gdebi ~/mailspring.deb
+
 #better gnome desktop
 sudo apt install gnome-tweak-tool
 sudo apt remove gnome-shell-extension-ubuntu-dock
