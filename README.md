@@ -21,9 +21,3 @@ configs:
 #stored in private gist: https://github.com/awilts/...
 #config intellij via 'settings repository'
 #stored in private repository: https://github.com/awilts/intellij-settings
-
-
-    # - name: Install wps-office
-    #   apt:
-    #     name: wps-office
-        
