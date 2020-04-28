@@ -1,24 +1,31 @@
 #!/bin/bash
 
+sudo sed -i "s|PKGEXT='.pkg.tar.xz'|PKGEXT='.pkg.tar'|g" /etc/makepkg.conf
+
+#yay
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+cd -
+
 #simple apps
-sudo pacman -S htop code screenfetch zip bat curl flameshot git zsh chromium terminator -y
+sudo pacman -S mlocate base-devel htop code screenfetch zip bat curl flameshot git zsh chromium terminator -y
+
 
 #todo
 git clone https://aur.archlinux.org/intellij-idea-ultimate-edition.git
 makepkg -sic intellij-idea-ultimate-edition
 intellij-idea-ultimate-edition
 
+#spotify
+...
+https://aur.archlinux.org/spotify.git
+
 #oh-my-zsh
 yes | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 cp -rf configs/.zshrc ~/.zshrc
-
-#spotify
-curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add - 
-echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
-sudo apt-get update 
-sudo apt-get install spotify-client -y
 
 #nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | zsh
@@ -78,3 +85,8 @@ rm -r alacritty
     #terminator
     #backslide ?
     #clipboard indicator ?
+
+
+    polybar?
+
+    spotify theme von norb?
