@@ -1,25 +1,19 @@
 #!/bin/bash
 
+#disable compression for makepkg
 sudo sed -i "s|PKGEXT='.pkg.tar.xz'|PKGEXT='.pkg.tar'|g" /etc/makepkg.conf
+
+#install base-devel
+sudo pacman -S base-devel --noconfirm
 
 #yay
 git clone https://aur.archlinux.org/yay.git
 cd yay
-makepkg -si
+makepkg -si --noconfirm
 cd -
 
-#simple apps
-sudo pacman -S mlocate base-devel htop code screenfetch zip bat curl flameshot git zsh chromium terminator -y
-
-
-#todo
-git clone https://aur.archlinux.org/intellij-idea-ultimate-edition.git
-makepkg -sic intellij-idea-ultimate-edition
-intellij-idea-ultimate-edition
-
-#spotify
-...
-https://aur.archlinux.org/spotify.git
+#install apps
+yay -S --noconfirm mlocate htop visual-studio-code-bin screenfetch zip bat curl flameshot git zsh chromium terminator intellij-idea-ultimate-edition spotify
 
 #oh-my-zsh
 yes | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -33,11 +27,6 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | zsh
 #sdkman 
 curl -s "https://get.sdkman.io" | zsh
 
-#mailspring
-wget -O ~/mailspring.rpm "https://updates.getmailspring.com/download?platform=linuxRpm"
-sudo dnf install ~/mailspring.rpm
-
-
 ./gnomeSetup.sh
 
 #gnome extensions
@@ -45,39 +34,6 @@ sudo dnf install ~/mailspring.rpm
 #https://extensions.gnome.org/extension/779/clipboard-indicator/
 #add hotkeys
 #backslide
-
-
-# This installs alacritty terminal on ubuntu (https://github.com/jwilm/alacritty)
-curl https://sh.rustup.rs -sSf | sh
-sudo apt-get install -y cmake libfreetype6-dev libfontconfig1-dev xclip
-git clone https://github.com/jwilm/alacritty
-cd alacritty
-cargo install
-
-# Add Man-Page entries
-sudo mkdir -p /usr/local/share/man/man1
-gzip -c alacritty.man | sudo tee /usr/local/share/man/man1/alacritty.1.gz > /dev/null
-
-# Add shell completion for bash and zsh
-mkdir -p ~/.bash_completion
-cp alacritty-completions.bash ~/.bash_completion/alacritty
-echo "source ~/.bash_completion/alacritty" >> ~/.bashrc
-
-sudo cp alacritty-completions.zsh /usr/share/zsh/functions/Completion/X/_alacritty
-
-# Copy default config into home dir
-cp alacritty.yml ~/.alacritty.yml
-
-# Create desktop file
-cp Alacritty.desktop ~/.local/share/applications/
-
-# Copy binary to path
-sudo cp target/release/alacritty /usr/local/bin
-
-# Remove temporary dir
-cd ..
-rm -r alacritty
-
 
 #chezmoi
     #vscode
