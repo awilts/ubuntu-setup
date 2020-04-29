@@ -4,16 +4,16 @@
 sudo sed -i "s|PKGEXT='.pkg.tar.xz'|PKGEXT='.pkg.tar'|g" /etc/makepkg.conf
 
 #install base-devel
-sudo pacman -S base-devel --noconfirm
+sudo pacman -S base-devel --noconfirm --needed
 
 #yay
 git clone https://aur.archlinux.org/yay.git
 cd yay
-makepkg -si --noconfirm
+makepkg -si --noconfirm --needed
 cd -
 
 #install apps
-yay -Sc --noconfirm mlocate bashtop visual-studio-code-bin chezmoi screenfetch zip bat curl flameshot git zsh chromium terminator intellij-idea-ultimate-edition spotify
+yay -Sc --noconfirm --needed mlocate bashtop visual-studio-code-bin chezmoi screenfetch zip bat curl flameshot git zsh chromium terminator intellij-idea-ultimate-edition spotify
 
 #oh-my-zsh
 yes | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
