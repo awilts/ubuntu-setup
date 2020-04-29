@@ -27,7 +27,3 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/or
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ name 'Shutdown'
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ command 'gnome-session-quit  --power-off'
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ binding '<Alt>F4'
-
-#disable standby on lid-close
-gsettings set org.gnome.settings-daemon.plugins.power lid-close-battery-action 'nothing'
-gsettings set org.gnome.settings-daemon.plugins.power lid-close-ac-action 'nothing'
