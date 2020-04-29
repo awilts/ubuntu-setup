@@ -13,7 +13,8 @@ makepkg -si --noconfirm --needed
 cd -
 
 #install apps
-yay -Sc --noconfirm --needed mlocate bashtop visual-studio-code-bin chezmoi screenfetch zip bat curl flameshot git zsh chromium terminator intellij-idea-ultimate-edition spotify
+yay -S --noconfirm --needed mlocate bashtop visual-studio-code-bin chezmoi screenfetch zip bat curl flameshot git zsh chromium terminator intellij-idea-ultimate-edition spotify
+yay -Sc
 
 #oh-my-zsh
 yes | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
