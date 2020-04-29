@@ -14,7 +14,6 @@ cd -
 
 #install apps
 yay -S --noconfirm --needed mlocate bashtop visual-studio-code-bin chezmoi screenfetch zip bat curl flameshot git zsh chromium terminator intellij-idea-ultimate-edition spotify
-yay -Sc
 
 #oh-my-zsh
 yes | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -32,7 +31,7 @@ sdk i java
 echo 'export JAVA_HOME=/home/alex/.sdkman/candidates/java/current' >> ~/.profile
 
 #setup dotfiles
-#chezmoi init https://github.com/awilts/dotfiles.git
+chezmoi init https://github.com/awilts/dotfiles.git
     #vscode
     #intellij
     #terminator
