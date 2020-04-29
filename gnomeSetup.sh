@@ -14,6 +14,8 @@ gsettings set org.gnome.desktop.wm.keybindings toggle-maximized "['<Super>Up']"
 gsettings set org.gnome.desktop.wm.keybindings close "['<Super>w']"
 gsettings set org.gnome.desktop.wm.keybindings show-desktop "['<Super>d']"
 gsettings set org.gnome.desktop.wm.preferences button-layout :
+gsettings set org.gnome.desktop.wm.preferences num-workspaces 1
+gsettings set org.gnome.mutter dynamic-workspaces false
 
 #custom shortcuts
 gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/']"
