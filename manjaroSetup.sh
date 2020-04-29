@@ -4,7 +4,7 @@
 sudo sed -i "s|PKGEXT='.pkg.tar.xz'|PKGEXT='.pkg.tar'|g" /etc/makepkg.conf
 
 #install base-devel
-sudo pacman -Sc base-devel --noconfirm
+sudo pacman -S base-devel --noconfirm
 
 #yay
 git clone https://aur.archlinux.org/yay.git
