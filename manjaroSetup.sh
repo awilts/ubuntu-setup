@@ -30,14 +30,17 @@ export SDKMAN_DIR="/home/alex/.sdkman"
 sdk i java
 echo 'export JAVA_HOME=/home/alex/.sdkman/candidates/java/current' >> ~/.profile
 
+#custom config path for intellij
+sudo sed -i "s|# idea.config.path=\${user.home}/.IntelliJIdea/config|idea.config.path=\${user.home}/.IntelliJIdea/config|g" /opt/intellij-idea-ultimate-edition/bin/idea.properties
+
 #setup dotfiles
 chezmoi init https://github.com/awilts/dotfiles.git
-    #vscode
     #intellij
-    #terminator
     #git
     #backslide ?
     #clipboard indicator ?
+    #ssh key via 1password?
+    #gpg via 1password?
 
 #setup gnome
 ./gnomeSetup.sh
